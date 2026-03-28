@@ -1,0 +1,62 @@
+export const pastEvents = [
+  {
+    id: "sterling-wedding",
+    title: "The Sterling Wedding",
+    date: "June 2025",
+    venueId: "grand-estate",
+    venueName: "The Grand Estate",
+    description:
+      "A timeless celebration of love, set against the backdrop of historic elegance and blooming summer gardens.",
+    category: "Wedding",
+    images: [
+      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1465495910484-c4b2c1f88c5f?q=80&w=1200&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "luna-gala",
+    title: "Luna Midnight Gala",
+    date: "October 2025",
+    venueId: "glasshouse-botanical",
+    venueName: "Glasshouse Botanical",
+    description:
+      "An ethereal evening of art and botanical wonder, where glass and light met the whispering leaves of autumn.",
+    category: "Social",
+    images: [
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472653431158-6364773b2a56?q=80&w=1200&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "vanguard-summit",
+    title: "Vanguard Tech Summit",
+    date: "January 2026",
+    venueId: "industrial-loft",
+    venueName: "The Foundry Loft",
+    description:
+      "Modern innovation meets industrial heritage in a space designed for visionary collaboration.",
+    category: "Corporate",
+    images: [
+      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1475721027185-404ebc77d26c?q=80&w=1200&auto=format&fit=crop",
+    ],
+  },
+  {
+    id: "azure-soiree",
+    title: "The Azure Soirée",
+    date: "August 2025",
+    venueId: "coastal-villa",
+    venueName: "Villa del Mar",
+    description:
+      "A private oceanfront gathering celebrating the serene beauty of the coast and the warmth of intimate connections.",
+    category: "Social",
+    images: [
+      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=1200&auto=format&fit=crop",
+    ],
+  },
+];

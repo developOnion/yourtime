@@ -8,6 +8,7 @@ export default function Navbar() {
 
   const links = [
     { name: "Venues", path: "/venues" },
+    { name: "Gallery", path: "/gallery" },
     { name: "Services", path: "/services" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },

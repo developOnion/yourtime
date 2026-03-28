@@ -72,7 +72,6 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} Your Time Venues. All rights reserved.
         </p>
-        <p className="mt-4 md:mt-0">Designed with intention.</p>
       </div>
     </footer>
   );
