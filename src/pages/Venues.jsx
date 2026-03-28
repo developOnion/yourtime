@@ -20,7 +20,7 @@ export default function Venues() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-y-24">
           {venues.map((venue, index) => (
             <Link key={venue.id} to={`/venues/${venue.id}`} className={`group block ${index % 2 !== 0 ? 'lg:mt-24' : ''}`}>
-              <div className="relative overflow-hidden aspect-[4/3] md:aspect-[3/4] mb-8 bg-gray-100 border border-primary/5">
+              <div className="relative overflow-hidden aspect-4/3 md:aspect-3/4 mb-8 bg-gray-100 border border-primary/5">
                 <img 
                   src={venue.coverImage} 
                   alt={venue.name} 

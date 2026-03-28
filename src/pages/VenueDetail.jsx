@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { venues } from '../data/venues';
 import { MapPin, Users, DollarSign, CalendarHeart } from 'lucide-react';
+import VenueHero from '../components/layouts/VenueHero';
 
 export default function VenueDetail() {
   const { id } = useParams();
@@ -13,21 +14,8 @@ export default function VenueDetail() {
   return (
     <div className="w-full bg-secondary">
       {/* Hero Header */}
-      <section className="relative h-[70vh] w-full mt-[-6rem]">
-        <img 
-          src={venue.coverImage} 
-          alt={venue.name} 
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-x-0 bottom-0 p-8 md:p-16 max-w-7xl mx-auto flex flex-col items-start text-secondary">
-          <p className="tracking-widest text-xs uppercase opacity-80 mb-4 font-semibold">{venue.location}</p>
-          <h1 className="text-5xl md:text-7xl font-serif tracking-tight mb-4">{venue.name}</h1>
-          <p className="text-lg md:text-xl italic font-light opacity-90">{venue.tagline}</p>
-        </div>
-      </section>
+      <VenueHero venue={venue} />
 
-      {/* Detail Content */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
@@ -42,7 +30,7 @@ export default function VenueDetail() {
             <h3 className="text-sm tracking-widest uppercase text-primary/60 mb-8 font-semibold">Gallery</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {venue.gallery.map((imgUrl, idx) => (
-                <div key={idx} className={`relative aspect-[4/3] bg-gray-100 overflow-hidden ${idx === 0 ? 'md:col-span-2 aspect-[16/9]' : ''}`}>
+                <div key={idx} className={`relative aspect-4/3 bg-gray-100 overflow-hidden ${idx === 0 ? 'md:col-span-2 aspect-[16/9]' : ''}`}>
                   <img src={imgUrl} alt={`${venue.name} detail ${idx + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}

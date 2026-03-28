@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { venues } from '../data/venues';
 import { ArrowRight } from 'lucide-react';
+import Image from '../components/Image';
+import VenueCard from '../components/cards/VenueCard';
 
 export default function Home() {
   const featuredVenues = venues.slice(0, 2);
@@ -8,8 +10,8 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[85vh] w-full mt-[-6rem]">
-        <img 
+      <section className="relative h-[85vh] w-full -mt-24">
+        <Image 
           src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop" 
           alt="Elegant Venue" 
           className="w-full h-full object-cover object-center"
@@ -54,22 +56,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {featuredVenues.map((venue) => (
-              <Link key={venue.id} to={`/venues/${venue.id}`} className="group block">
-                <div className="relative overflow-hidden aspect-[4/5] mb-6 border border-primary/5">
-                  <img 
-                    src={venue.coverImage} 
-                    alt={venue.name} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="text-2xl font-serif text-primary mb-1">{venue.name}</h4>
-                    <p className="text-sm font-light text-primary/70">{venue.location}</p>
-                  </div>
-                  <ArrowRight className="text-primary/30 group-hover:text-accent transition-colors duration-300" />
-                </div>
-              </Link>
+              <VenueCard key={venue.id} venue={venue} />
             ))}
           </div>
           

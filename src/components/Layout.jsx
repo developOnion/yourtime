@@ -14,7 +14,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen bg-secondary selection:bg-accent/20">
       <Navbar />
-      <main className="flex-grow pt-24 page-transition">
+      <main className="grow pt-24 page-transition">
         {children}
       </main>
       <Footer />

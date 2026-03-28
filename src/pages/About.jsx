@@ -2,7 +2,7 @@ export default function About() {
   return (
     <div className="w-full bg-secondary">
       {/* Hero Header */}
-      <section className="relative h-[60vh] w-full mt-[-6rem]">
+      <section className="relative h-[60vh] w-full -mt-24">
         <img 
           src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop" 
           alt="Elegant tablescape" 
@@ -17,9 +17,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Philosophy Section */}
       <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-serif text-primary mb-8 text-center uppercase tracking-widest text-sm">The Philosophy</h2>
+        <h2 className="text-2xl font-serif text-primary mb-8 text-center uppercase tracking-widest">The Philosophy</h2>
         <div className="w-8 h-px bg-accent mx-auto mb-12"></div>
         <div className="space-y-8 text-primary/80 font-light leading-loose text-lg text-justify md:text-center">
           <p>
@@ -34,8 +33,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Portfolio Snippet Grid */}
-      <section className="py-24 px-6 md:px-12 bg-[#F5F5F0] border-t border-primary/5">
+      <section className="py-24 px-6 md:px-12 bg-secondary border-t border-primary/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-sm font-serif text-primary/60 mb-12 text-center uppercase tracking-widest">Glimpses of Past Conceptions</h2>
           
