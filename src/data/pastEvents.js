@@ -5,8 +5,7 @@ export const pastEvents = [
     date: "June 2025",
     venueId: "grand-estate",
     venueName: "The Grand Estate",
-    description:
-      "A timeless celebration of love, set against the backdrop of historic elegance and blooming summer gardens.",
+    description: "A timeless celebration of love, set against the backdrop of historic elegance and blooming summer gardens.",
     category: "Wedding",
     images: [
       "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1200&auto=format&fit=crop",
@@ -20,8 +19,7 @@ export const pastEvents = [
     date: "October 2025",
     venueId: "glasshouse-botanical",
     venueName: "Glasshouse Botanical",
-    description:
-      "An ethereal evening of art and botanical wonder, where glass and light met the whispering leaves of autumn.",
+    description: "An ethereal evening of art and botanical wonder, where glass and light met the whispering leaves of autumn.",
     category: "Social",
     images: [
       "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop",
@@ -35,8 +33,7 @@ export const pastEvents = [
     date: "January 2026",
     venueId: "industrial-loft",
     venueName: "The Foundry Loft",
-    description:
-      "Modern innovation meets industrial heritage in a space designed for visionary collaboration.",
+    description: "Modern innovation meets industrial heritage in a space designed for visionary collaboration.",
     category: "Corporate",
     images: [
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1200&auto=format&fit=crop",
@@ -50,8 +47,7 @@ export const pastEvents = [
     date: "August 2025",
     venueId: "coastal-villa",
     venueName: "Villa del Mar",
-    description:
-      "A private oceanfront gathering celebrating the serene beauty of the coast and the warmth of intimate connections.",
+    description: "A private oceanfront gathering celebrating the serene beauty of the coast and the warmth of intimate connections.",
     category: "Social",
     images: [
       "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1200&auto=format&fit=crop",
