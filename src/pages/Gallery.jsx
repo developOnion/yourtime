@@ -21,7 +21,7 @@ export default function Gallery() {
   }, [selectedEvent]);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-secondary">
+    <div className="pt-12 pb-24 min-h-screen bg-secondary">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
@@ -41,7 +41,7 @@ export default function Gallery() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300
+                className={`cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300
                   ${
                     filter === cat
                       ? "bg-primary text-secondary border-primary"
@@ -111,7 +111,7 @@ export default function Gallery() {
           <div className="relative w-full max-w-6xl max-h-full bg-secondary overflow-y-auto rounded-sm shadow-2xl">
             <button
               onClick={() => setSelectedEvent(null)}
-              className="absolute top-6 right-6 z-10 p-2 bg-secondary/50 backdrop-blur-md text-primary hover:text-accent transition-colors rounded-full"
+              className="cursor-pointer absolute top-6 right-6 z-10 p-2 bg-secondary/50 backdrop-blur-md text-primary hover:text-accent transition-colors rounded-full"
             >
               <X size={24} />
             </button>
