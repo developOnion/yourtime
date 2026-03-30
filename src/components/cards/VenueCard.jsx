@@ -1,13 +1,12 @@
 
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import Image from "../Image";
 
 export default function VenueCard({ venue }) {
     return(
               <Link key={venue.id} to={`/venues/${venue.id}`} className="group block">
                 <div className="relative overflow-hidden aspect-4/5 mb-6 border border-primary/5">
-                  <Image 
+                  <img
                     src={venue.coverImage} 
                     alt={venue.name} 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"

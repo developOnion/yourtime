@@ -18,15 +18,15 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-secondary text-5xl md:text-7xl font-light tracking-tight mb-6 mt-16 font-serif">
-            Intentional <span className="italic text-secondary/80">Spaces</span>
+          <h1 className="text-neutral-950 text-5xl md:text-7xl font-light tracking-tight mb-6 mt-16 font-serif">
+            Intentional <span className="italic">Spaces</span>
           </h1>
-          <p className="text-secondary/90 text-sm md:text-base tracking-widest uppercase max-w-xl font-light mb-10">
+          <p className="text-neutral-900 text-sm md:text-base tracking-widest uppercase max-w-xl font-light mb-10">
             Curating exclusive venues for unforgettable narrative moments
           </p>
           <Link 
             to="/venues"
-            className="border border-secondary text-secondary px-8 py-3.5 tracking-widest uppercase text-xs hover:bg-secondary hover:text-primary transition-colors duration-500"
+            className="border border-neutral-950 text-neutral-950 px-8 py-3.5 tracking-widest uppercase text-xs hover:bg-neutral-950 hover:text-secondary transition-colors duration-500"
           >
             Explore Portfolio
           </Link>
