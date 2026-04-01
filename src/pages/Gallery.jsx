@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { pastEvents } from "../data/pastEvents";
 import { Search, X, Calendar, MapPin, Tag } from "lucide-react";
+import LazyImage from "../components/LazyImage";
+import Reveal from "../components/Reveal";
 
 export default function Gallery() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -25,81 +27,83 @@ export default function Gallery() {
   return (
     <div className="pt-12 pb-24 min-h-screen bg-secondary">
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="max-w-2xl">
-            <h1 className="font-serif text-5xl md:text-6xl text-primary mb-6 leading-tight">
-              Past <span className="text-accent italic font-light">Events</span>
-            </h1>
-            <p className="text-primary/70 text-lg leading-relaxed font-light">
-              Explore a curated selection of moments we have helped bring to
-              life. Each event is a testament to our commitment to romantic
-              minimalism and intentionality.
-            </p>
-          </div>
+      <Reveal>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="max-w-2xl">
+              <h1 className="font-serif text-5xl md:text-6xl text-primary mb-6 leading-tight">
+                Past{" "}
+                <span className="text-accent italic font-light">Events</span>
+              </h1>
+              <p className="text-primary/70 text-lg leading-relaxed font-light">
+                Explore a curated selection of moments we have helped bring to
+                life. Each event is a testament to our commitment to romantic
+                minimalism and intentionality.
+              </p>
+            </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-4">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300
-                  ${
-                    filter === cat
-                      ? "bg-primary text-secondary border-primary"
-                      : "border-primary/10 text-primary hover:border-accent hover:text-accent"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {/* Filters */}
+            <div className="flex flex-wrap gap-4">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300
+                    ${
+                      filter === cat
+                        ? "bg-primary text-secondary border-primary"
+                        : "border-primary/10 text-primary hover:border-accent hover:text-accent"
+                    }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* Grid */}
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
-          {filteredEvents.map((event) => (
-            <div
-              key={event.id}
-              className="group cursor-pointer"
-              onClick={() => setSelectedEvent(event)}
-            >
-              <div className="relative aspect-16/10 overflow-hidden mb-6 bg-primary/5">
-                <img
-                  src={event.images[0]}
-                  alt={event.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop";
-                  }}
-                />
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-secondary/80 backdrop-blur-md rounded-full flex items-center justify-center text-primary">
-                    <Search size={20} />
+          {filteredEvents.map((event, index) => (
+            <Reveal key={event.id} delay={index * 100}>
+              <div
+                className="group cursor-pointer"
+                onClick={() => setSelectedEvent(event)}
+              >
+                <div className="relative mb-6">
+                  <LazyImage
+                    src={event.images[0]}
+                    alt={event.title}
+                    className="w-full h-full transition-transform duration-700 group-hover:scale-105"
+                    wrapperClassName="bg-primary/5"
+                    aspectRatio="aspect-[16/10]"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
+                    <div className="w-12 h-12 bg-secondary/80 backdrop-blur-md rounded-full flex items-center justify-center text-primary">
+                      <Search size={20} />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex justify-between items-start gap-4">
-                <div>
-                  <div className="flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase text-accent mb-2 font-medium">
-                    <span>{event.category}</span>
-                    <span className="w-1 h-1 rounded-full bg-accent/30" />
-                    <span>{event.date}</span>
+                <div className="flex justify-between items-start gap-4">
+                  <div>
+                    <div className="flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase text-accent mb-2 font-medium">
+                      <span>{event.category}</span>
+                      <span className="w-1 h-1 rounded-full bg-accent/30" />
+                      <span>{event.date}</span>
+                    </div>
+                    <h3 className="font-serif text-2xl text-primary group-hover:text-accent transition-colors duration-300">
+                      {event.title}
+                    </h3>
+                    <p className="text-primary/60 text-sm mt-2 line-clamp-1 italic font-light">
+                      {event.venueName}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-2xl text-primary group-hover:text-accent transition-colors duration-300">
-                    {event.title}
-                  </h3>
-                  <p className="text-primary/60 text-sm mt-2 line-clamp-1 italic font-light">
-                    {event.venueName}
-                  </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -169,17 +173,14 @@ export default function Gallery() {
               {/* Event Images */}
               <div className="lg:col-span-3 bg-primary/5 p-4 md:p-8 space-y-8 overflow-y-auto max-h-[70vh] lg:max-h-none">
                 {selectedEvent.images.map((img, idx) => (
-                  <div key={idx} className="relative overflow-hidden group/img">
-                    <img
-                      src={img}
-                      alt={`${selectedEvent.title} ${idx + 1}`}
-                      className="w-full h-auto object-cover transform transition-transform duration-1000"
-                      onError={(e) => {
-                        e.target.src =
-                          "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop";
-                      }}
-                    />
-                  </div>
+                  <LazyImage
+                    key={idx}
+                    src={img}
+                    alt={`${selectedEvent.title} ${idx + 1}`}
+                    className="w-full h-auto transform transition-transform duration-1000"
+                    wrapperClassName=""
+                    aspectRatio="aspect-[16/10]"
+                  />
                 ))}
               </div>
             </div>

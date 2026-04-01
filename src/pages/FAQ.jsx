@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { faqs } from "../data/faqs";
+import Reveal from "../components/Reveal";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -34,53 +35,54 @@ export default function FAQ() {
       <section className="py-24 px-6 md:px-12 max-w-3xl mx-auto">
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border-b border-primary/10 overflow-hidden"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="cursor-pointer w-full py-6 flex justify-between items-center text-left hover:text-accent transition-colors duration-300 group"
-              >
-                <span className="text-lg md:text-xl font-serif text-primary group-hover:text-accent tracking-tight">
-                  {faq.question}
-                </span>
-                {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-accent" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-primary/40 group-hover:text-accent" />
-                )}
-              </button>
+            <Reveal key={index} delay={index * 50}>
+              <div className="border-b border-primary/10 overflow-hidden">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="cursor-pointer w-full py-6 flex justify-between items-center text-left hover:text-accent transition-colors duration-300 group"
+                >
+                  <span className="text-lg md:text-xl font-serif text-primary group-hover:text-accent tracking-tight">
+                    {faq.question}
+                  </span>
+                  {openIndex === index ? (
+                    <ChevronUp className="w-5 h-5 text-accent" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-primary/40 group-hover:text-accent" />
+                  )}
+                </button>
 
-              <div
-                className={`transition-all duration-500 ease-in-out ${
-                  openIndex === index ? "max-h-96 pb-8" : "max-h-0"
-                }`}
-              >
-                <p className="text-primary/70 leading-relaxed font-light">
-                  {faq.answer}
-                </p>
+                <div
+                  className={`transition-all duration-500 ease-in-out ${
+                    openIndex === index ? "max-h-96 pb-8" : "max-h-0"
+                  }`}
+                >
+                  <p className="text-primary/70 leading-relaxed font-light">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-24 text-center">
-          <h3 className="text-2xl font-serif text-primary mb-6">
-            Still have questions?
-          </h3>
-          <p className="text-primary/60 font-light mb-10 max-w-sm mx-auto">
-            We are here to help you find the perfect space for your next
-            significant celebration.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block border border-primary text-primary px-10 py-4 tracking-widest uppercase text-xs hover:bg-primary hover:text-secondary transition-all duration-500"
-          >
-            Contact Our Team
-          </Link>
-        </div>
+        <Reveal delay={200}>
+          <div className="mt-24 text-center">
+            <h3 className="text-2xl font-serif text-primary mb-6">
+              Still have questions?
+            </h3>
+            <p className="text-primary/60 font-light mb-10 max-w-sm mx-auto">
+              We are here to help you find the perfect space for your next
+              significant celebration.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block border border-primary text-primary px-10 py-4 tracking-widest uppercase text-xs hover:bg-primary hover:text-secondary transition-all duration-500"
+            >
+              Contact Our Team
+            </Link>
+          </div>
+        </Reveal>
       </section>
     </div>
   );
