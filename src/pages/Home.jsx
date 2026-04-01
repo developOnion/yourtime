@@ -8,18 +8,18 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[85vh] w-full mt-[-6rem]">
+      <section className="relative h-[85vh] w-full -mt-24">
         <img
           src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop"
           alt="Elegant Venue"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-secondary text-5xl md:text-7xl font-light tracking-tight mb-6 mt-16 font-serif">
             Intentional <span className="italic text-secondary/80">Spaces</span>
           </h1>
-          <p className="text-secondary/90 text-sm md:text-base tracking-widest uppercase max-w-xl font-light mb-10">
+          <p className="text-secondary text-sm md:text-base tracking-widest uppercase max-w-xl font-normal mb-10">
             Curating exclusive venues for unforgettable narrative moments
           </p>
           <Link
@@ -68,7 +68,7 @@ export default function Home() {
                 to={`/venues/${venue.id}`}
                 className="group block"
               >
-                <div className="relative overflow-hidden aspect-[4/5] mb-6 border border-primary/5">
+                <div className="relative overflow-hidden aspect-4/5 mb-6 border border-primary/5">
                   <img
                     src={venue.coverImage}
                     alt={venue.name}

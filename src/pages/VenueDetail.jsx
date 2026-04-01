@@ -1,6 +1,12 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { venues } from "../data/venues";
-import { MapPin, Users, DollarSign, CalendarHeart } from "lucide-react";
+import {
+  MapPin,
+  Users,
+  DollarSign,
+  CalendarHeart,
+  ArrowLeft,
+} from "lucide-react";
 
 export default function VenueDetail() {
   const { id } = useParams();
@@ -13,18 +19,19 @@ export default function VenueDetail() {
   return (
     <div className="w-full bg-secondary">
       {/* Hero Header */}
-      <section className="relative h-[70vh] w-full mt-[-6rem]">
+      <section className="relative h-[70vh] w-full -mt-24">
         <img
           src={venue.coverImage}
           alt={venue.name}
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
         <div className="absolute inset-x-0 bottom-0 p-8 md:p-16 max-w-7xl mx-auto flex flex-col items-start text-secondary">
           <p className="tracking-widest text-xs uppercase opacity-80 mb-4 font-semibold">
             {venue.location}
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif tracking-tight mb-4">
+
+          <h1 className="text-accent text-5xl md:text-7xl font-serif tracking-tight mb-4">
             {venue.name}
           </h1>
           <p className="text-lg md:text-xl italic font-light opacity-90">
@@ -35,6 +42,16 @@ export default function VenueDetail() {
 
       {/* Detail Content */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <Link
+          to="/venues"
+          className="flex items-center text-xs uppercase tracking-widest mb-8 opacity-60 hover:opacity-100 transition-opacity duration-300 group"
+        >
+          <ArrowLeft
+            size={14}
+            className="mr-2 group-hover:-translate-x-1 transition-transform"
+          />
+          Back to Venues
+        </Link>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Main Description */}
           <div className="lg:col-span-8">
@@ -53,7 +70,7 @@ export default function VenueDetail() {
               {venue.gallery.map((imgUrl, idx) => (
                 <div
                   key={idx}
-                  className={`relative aspect-[4/3] bg-gray-100 overflow-hidden ${idx === 0 ? "md:col-span-2 aspect-[16/9]" : ""}`}
+                  className={`relative aspect-4/3 bg-gray-100 overflow-hidden ${idx === 0 ? "md:col-span-2 aspect-video" : ""}`}
                 >
                   <img
                     src={imgUrl}
@@ -105,8 +122,7 @@ export default function VenueDetail() {
                     </span>
                   </div>
                   <p className="text-primary/70 font-light pl-8">
-                    Starting at ${venue.pricingStartingAt.toLocaleString()} /{" "}
-                    {venue.priceTier}
+                    Starting at ${venue.pricingStartingAt.toLocaleString()}
                   </p>
                 </div>
               </div>

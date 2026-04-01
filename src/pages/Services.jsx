@@ -50,7 +50,7 @@ export default function Services() {
             >
               {/* Image Section */}
               <div className="w-full lg:w-1/2">
-                <div className="relative aspect-[4/5] md:aspect-[3/2] overflow-hidden bg-gray-100 border border-primary/5 shadow-2xl">
+                <div className="relative aspect-4/5 md:aspect-3/2 overflow-hidden bg-gray-100 border border-primary/5 shadow-2xl">
                   <img
                     src={service.image}
                     alt={service.title}

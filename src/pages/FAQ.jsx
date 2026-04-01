@@ -32,10 +32,10 @@ export default function FAQ() {
 
       {/* FAQ Section */}
       <section className="py-24 px-6 md:px-12 max-w-3xl mx-auto">
-        <div className="space-y-4"> {/* refactor */}
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="border-b border-primary/10 overflow-hidden"
             >
               <button
@@ -51,8 +51,8 @@ export default function FAQ() {
                   <ChevronDown className="w-5 h-5 text-primary/40 group-hover:text-accent" />
                 )}
               </button>
-              
-              <div 
+
+              <div
                 className={`transition-all duration-500 ease-in-out ${
                   openIndex === index ? "max-h-96 pb-8" : "max-h-0"
                 }`}
@@ -71,7 +71,8 @@ export default function FAQ() {
             Still have questions?
           </h3>
           <p className="text-primary/60 font-light mb-10 max-w-sm mx-auto">
-            We are here to help you find the perfect space for your next significant celebration.
+            We are here to help you find the perfect space for your next
+            significant celebration.
           </p>
           <Link
             to="/contact"

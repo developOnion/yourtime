@@ -29,7 +29,7 @@ export default function Venues() {
               to={`/venues/${venue.id}`}
               className={`group block ${index % 2 !== 0 ? "lg:mt-24" : ""}`}
             >
-              <div className="relative overflow-hidden aspect-[4/3] md:aspect-[3/4] mb-8 bg-gray-100 border border-primary/5">
+              <div className="relative overflow-hidden aspect-4/3 md:aspect-3/4 mb-8 bg-gray-100 border border-primary/5">
                 <img
                   src={venue.coverImage}
                   alt={venue.name}

@@ -20,6 +20,8 @@ export default function Gallery() {
     }
   }, [selectedEvent]);
 
+  // cursor-pointer absolute top-6 right-6 z-10 p-2 bg-secondary/50 backdrop-blur-md text-primary hover:text-accent transition-colors rounded-full
+
   return (
     <div className="pt-12 pb-24 min-h-screen bg-secondary">
       {/* Header */}
@@ -30,8 +32,9 @@ export default function Gallery() {
               Past <span className="text-accent italic font-light">Events</span>
             </h1>
             <p className="text-primary/70 text-lg leading-relaxed font-light">
-              Explore a curated selection of moments we have helped bring to life. 
-              Each event is a testament to our commitment to romantic minimalism and intentionality.
+              Explore a curated selection of moments we have helped bring to
+              life. Each event is a testament to our commitment to romantic
+              minimalism and intentionality.
             </p>
           </div>
 
@@ -64,13 +67,14 @@ export default function Gallery() {
               className="group cursor-pointer"
               onClick={() => setSelectedEvent(event)}
             >
-              <div className="relative aspect-[16/10] overflow-hidden mb-6 bg-primary/5">
+              <div className="relative aspect-16/10 overflow-hidden mb-6 bg-primary/5">
                 <img
                   src={event.images[0]}
                   alt={event.title}
                   className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
-                    e.target.src = "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop";
+                    e.target.src =
+                      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop";
                   }}
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
@@ -79,7 +83,7 @@ export default function Gallery() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex justify-between items-start gap-4">
                 <div>
                   <div className="flex items-center gap-3 text-[10px] tracking-[0.2em] uppercase text-accent mb-2 font-medium">
@@ -102,16 +106,16 @@ export default function Gallery() {
 
       {/* Modal / Lightbox */}
       {selectedEvent && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12">
-          <div 
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-12">
+          <div
             className="absolute inset-0 bg-primary/95 backdrop-blur-sm"
             onClick={() => setSelectedEvent(null)}
           />
-          
+
           <div className="relative w-full max-w-6xl max-h-full bg-secondary overflow-y-auto rounded-sm shadow-2xl">
             <button
               onClick={() => setSelectedEvent(null)}
-              className="cursor-pointer absolute top-6 right-6 z-10 p-2 bg-secondary/50 backdrop-blur-md text-primary hover:text-accent transition-colors rounded-full"
+              className="cursor-pointer absolute top-6 right-6 z-10 p-2 bg-secondary backdrop-blur-md text-primary hover:text-accent transition-colors rounded-full"
             >
               <X size={24} />
             </button>
@@ -123,19 +127,31 @@ export default function Gallery() {
                   <Tag size={12} />
                   <span>{selectedEvent.category}</span>
                 </div>
-                
+
                 <h2 className="font-serif text-4xl md:text-5xl text-primary mb-6 leading-tight">
                   {selectedEvent.title}
                 </h2>
-                
+
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3 text-primary/70 text-sm">
-                    <Calendar size={16} strokeWidth={1.5} className="text-accent" />
-                    <span className="font-light tracking-wide">{selectedEvent.date}</span>
+                    <Calendar
+                      size={16}
+                      strokeWidth={1.5}
+                      className="text-accent"
+                    />
+                    <span className="font-light tracking-wide">
+                      {selectedEvent.date}
+                    </span>
                   </div>
                   <div className="flex items-center gap-3 text-primary/70 text-sm">
-                    <MapPin size={16} strokeWidth={1.5} className="text-accent" />
-                    <span className="font-light tracking-wide">{selectedEvent.venueName}</span>
+                    <MapPin
+                      size={16}
+                      strokeWidth={1.5}
+                      className="text-accent"
+                    />
+                    <span className="font-light tracking-wide">
+                      {selectedEvent.venueName}
+                    </span>
                   </div>
                 </div>
 
@@ -144,9 +160,9 @@ export default function Gallery() {
                 </p>
 
                 <div className="mt-auto pt-8 border-t border-primary/5">
-                   <p className="text-[10px] tracking-[0.3em] uppercase text-primary/40 font-medium">
-                      Inspired by Intentionality
-                   </p>
+                  <p className="text-[10px] tracking-[0.3em] uppercase text-primary/40 font-medium">
+                    Inspired by Intentionality
+                  </p>
                 </div>
               </div>
 
@@ -159,7 +175,8 @@ export default function Gallery() {
                       alt={`${selectedEvent.title} ${idx + 1}`}
                       className="w-full h-auto object-cover transform transition-transform duration-1000"
                       onError={(e) => {
-                        e.target.src = "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop";
+                        e.target.src =
+                          "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop";
                       }}
                     />
                   </div>
