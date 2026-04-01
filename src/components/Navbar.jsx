@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: "Gallery", path: "/gallery" },
     { name: "Services", path: "/services" },
     { name: "About", path: "/about" },
+    { name: "FAQ", path: "/faq" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -22,7 +23,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-serif text-2xl tracking-widest text-primary flex-shrink-0"
+          className="font-serif text-2xl tracking-widest text-primary shrink-0"
         >
           YOUR<span className="text-accent ml-1 italic font-light">TIME</span>
         </Link>
