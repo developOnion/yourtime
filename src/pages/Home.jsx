@@ -18,7 +18,7 @@ export default function Home() {
           wrapperClassName="!h-full !aspect-auto"
           aspectRatio="!h-full"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[3px]"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-secondary text-5xl md:text-7xl font-light tracking-tight mb-6 mt-16 font-serif">
             Intentional <span className="italic text-secondary/80">Spaces</span>
@@ -28,9 +28,9 @@ export default function Home() {
           </p>
           <Link
             to="/venues"
-            className="border border-secondary text-secondary px-8 py-3.5 tracking-widest uppercase text-xs hover:bg-secondary hover:text-primary transition-colors duration-500"
+            className="bg-secondary text-primary px-10 py-4 tracking-widest uppercase text-xs font-semibold hover:bg-accent hover:text-white transition-all duration-500 shadow-xl"
           >
-            Explore Portfolio
+            Explore Venues
           </Link>
         </div>
       </section>

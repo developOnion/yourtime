@@ -12,7 +12,7 @@ export default function Venues() {
         <Reveal>
           <div className="mb-20">
             <p className="tracking-widest uppercase text-xs text-primary/50 mb-4 font-semibold">
-              Our Portfolio
+              Our Venues
             </p>
             <h1 className="text-5xl md:text-6xl font-serif text-primary font-light">
               Exclusive{" "}
