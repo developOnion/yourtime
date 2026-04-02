@@ -15,7 +15,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="font-sans text-secondary/70 text-sm max-w-sm leading-relaxed font-light">
-            Curating high-end venue experiences for life’s most profound
+            Curating high-end venue experiences for life's most profound
             moments. Embracing intentionality, beauty, and seamless execution.
           </p>
         </div>
