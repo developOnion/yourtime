@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowRight } from "lucide-react";
+import VenueCard from "../components/VenueCard";
 import LazyImage from "../components/LazyImage";
 import Reveal from "../components/Reveal";
 
@@ -71,28 +72,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {featuredVenues.map((venue, index) => (
-              <Reveal key={venue.id} delay={index * 150}>
-                <Link to={`/venues/${venue.id}`} className="group block">
-                  <LazyImage
-                    src={venue.coverImage}
-                    alt={venue.name}
-                    className="w-full h-full transition-transform duration-1000 group-hover:scale-105"
-                    wrapperClassName="mb-6 border border-primary/5"
-                    aspectRatio="aspect-[4/5]"
-                  />
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h4 className="text-2xl font-serif text-primary mb-1">
-                        {venue.name}
-                      </h4>
-                      <p className="text-sm font-light text-primary/70">
-                        {venue.location}
-                      </p>
-                    </div>
-                    <ArrowRight className="text-primary/30 group-hover:text-accent transition-colors duration-300" />
-                  </div>
-                </Link>
-              </Reveal>
+              <VenueCard
+                key={venue.id}
+                venue={venue}
+                variant="compact"
+                index={index}
+              />
             ))}
           </div>
 
