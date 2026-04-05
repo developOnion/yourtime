@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowRight } from "lucide-react";
 import VenueCard from "../components/VenueCard";
-import LazyImage from "../components/LazyImage";
+import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 
 export default function Home() {
@@ -11,15 +11,12 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[85vh] w-full -mt-24">
-        <LazyImage
-          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop"
-          alt="Elegant Venue"
-          className="w-full h-full"
-          wrapperClassName="!h-full !aspect-auto"
-          aspectRatio="!h-full"
-        />
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-[3px]"></div>
+      <PageHero
+        imageSrc="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop"
+        imageAlt="Elegant Venue"
+        heightClass="h-[85vh]"
+        overlayClass="bg-black/30 backdrop-blur-[3px]"
+      >
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-secondary text-5xl md:text-7xl font-light tracking-tight mb-6 mt-16 font-serif">
             Intentional <span className="italic text-secondary/80">Spaces</span>
@@ -34,7 +31,7 @@ export default function Home() {
             Explore Venues
           </Link>
         </div>
-      </section>
+      </PageHero>
 
       {/* Mission Statement */}
       <Reveal>

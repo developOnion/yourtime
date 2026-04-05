@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowLeft } from "lucide-react";
 import LazyImage from "../components/LazyImage";
+import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import VenueSpecsSidebar from "../components/VenueSpecsSidebar";
 
@@ -16,15 +17,12 @@ export default function VenueDetail() {
   return (
     <div className="w-full bg-secondary">
       {/* Hero Header */}
-      <section className="relative h-[70vh] w-full -mt-24">
-        <LazyImage
-          src={venue.coverImage}
-          alt={venue.name}
-          className="w-full h-full"
-          wrapperClassName="!h-full !aspect-auto"
-          aspectRatio="!h-full"
-        />
-        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
+      <PageHero
+        imageSrc={venue.coverImage}
+        imageAlt={venue.name}
+        heightClass="h-[70vh]"
+        overlayClass="bg-linear-to-t from-black/80 via-black/40 to-transparent"
+      >
         <div className="absolute inset-x-0 bottom-0 p-8 md:p-16 max-w-7xl mx-auto flex flex-col items-start text-secondary">
           <p className="tracking-widest text-xs uppercase opacity-80 mb-4 font-semibold">
             {venue.location}
@@ -37,7 +35,7 @@ export default function VenueDetail() {
             {venue.tagline}
           </p>
         </div>
-      </section>
+      </PageHero>
 
       {/* Detail Content */}
       <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">

@@ -1,4 +1,5 @@
 import LazyImage from "../components/LazyImage";
+import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 import { pastConceptionImages } from "../data/pastConceptionImages";
 
@@ -6,15 +7,12 @@ export default function About() {
   return (
     <div className="w-full bg-secondary">
       {/* Hero Header */}
-      <section className="relative h-[60vh] w-full -mt-24">
-        <LazyImage
-          src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop"
-          alt="Elegant tablescape"
-          className="w-full h-full"
-          wrapperClassName="!h-full !aspect-auto"
-          aspectRatio="!h-full"
-        />
-        <div className="absolute inset-0 bg-secondary/60 md:bg-secondary/30 backdrop-blur-[2px]"></div>
+      <PageHero
+        imageSrc="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop"
+        imageAlt="Elegant tablescape"
+        heightClass="h-[60vh]"
+        overlayClass="bg-secondary/60 md:bg-secondary/30 backdrop-blur-[2px]"
+      >
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <p className="tracking-widest uppercase text-xs text-primary/70 mb-4 font-semibold">
             Our Story
@@ -23,7 +21,7 @@ export default function About() {
             Rooted in <span className="italic">Intention</span>
           </h1>
         </div>
-      </section>
+      </PageHero>
 
       {/* Philosophy Section */}
       <Reveal>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { faqs } from "../data/faqs";
+import PageHero from "../components/PageHero";
 import Reveal from "../components/Reveal";
 
 export default function FAQ() {
@@ -14,13 +15,12 @@ export default function FAQ() {
   return (
     <div className="bg-secondary min-h-screen pb-24">
       {/* Hero Header */}
-      <section className="relative h-[40vh] w-full -mt-24">
-        <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
-          alt="Minimalist architectural space"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-secondary/40 backdrop-blur-[1px]"></div>
+      <PageHero
+        imageSrc="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
+        imageAlt="Minimalist architectural space"
+        heightClass="h-[40vh]"
+        overlayClass="bg-secondary/40 backdrop-blur-[1px]"
+      >
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pt-16">
           <p className="tracking-widest uppercase text-xs text-primary/70 mb-4 font-semibold">
             Common Inquiries
@@ -29,7 +29,7 @@ export default function FAQ() {
             Questions & <span className="italic">Answers</span>
           </h1>
         </div>
-      </section>
+      </PageHero>
 
       {/* FAQ Section */}
       <section className="py-24 px-6 md:px-12 max-w-3xl mx-auto">
