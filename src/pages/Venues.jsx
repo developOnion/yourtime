@@ -1,5 +1,5 @@
 import { venues } from "../data/venues";
-import VenueCard from "../components/cards/VenueCard.jsx";
+import VenueCard from "../components/VenueCard";
 import Reveal from "../components/Reveal";
 
 export default function Venues() {

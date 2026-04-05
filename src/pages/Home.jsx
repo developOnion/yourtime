@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowRight } from "lucide-react";
-import VenueCard from "../components/cards/VenueCard.jsx";
+import VenueCard from "../components/VenueCard";
 import LazyImage from "../components/LazyImage";
 import Reveal from "../components/Reveal";
 
