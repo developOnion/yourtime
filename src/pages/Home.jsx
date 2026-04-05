@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowRight } from "lucide-react";
-import VenueCard from "../components/VenueCard";
+import VenueCard from "../components/cards/VenueCard.jsx";
 import PageHero from "../components/PageHero";
-import Reveal from "../components/Reveal";
+import Reveal from "../components/effects/Reveal.jsx";
 
 export default function Home() {
   const featuredVenues = venues.slice(0, 2);

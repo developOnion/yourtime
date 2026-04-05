@@ -1,9 +1,9 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowLeft } from "lucide-react";
-import LazyImage from "../components/LazyImage";
+import LazyImage from "../components/effects/LazyImage.jsx";
 import PageHero from "../components/PageHero";
-import Reveal from "../components/Reveal";
+import Reveal from "../components/effects/Reveal.jsx";
 import VenueSpecsSidebar from "../components/VenueSpecsSidebar";
 
 export default function VenueDetail() {

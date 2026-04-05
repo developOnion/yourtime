@@ -1,5 +1,6 @@
-import LazyImage from "../components/LazyImage";
-import Reveal from "../components/Reveal";
+import LazyImage from "../components/effects/LazyImage";
+import Reveal from "../components/effects/Reveal";
+import SectionHeader from "../components/SectionHeader";
 import { services } from "../data/servies";
 
 export default function Services() {
@@ -8,17 +9,19 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <Reveal>
-          <div className="mb-24 text-center">
-            <p className="tracking-widest uppercase text-xs text-primary/50 mb-6 font-semibold">
-              Our Offerings
-            </p>
-            <h1 className="text-4xl md:text-6xl font-serif text-primary font-light mb-8 max-w-3xl mx-auto leading-tight">
-              Crafting the{" "}
-              <span className="italic text-primary/80">Complete</span>{" "}
-              Experience
-            </h1>
-            <div className="w-16 h-px bg-primary/20 mx-auto"></div>
-          </div>
+          <SectionHeader
+            subtitle="Our Offerings"
+            title={
+              <>
+                Crafting the{" "}
+                <span className="italic text-primary/80">Complete</span>{" "}
+                Experience
+              </>
+            }
+            centered={true}
+            showDivider={true}
+            className="mb-24"
+          />
         </Reveal>
 
         {/* Services List */}

@@ -3,7 +3,8 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { useSubmit } from "@formspree/react";
 import { venues } from "../data/venues";
 import { Check, X } from "lucide-react";
-import Reveal from "../components/Reveal";
+import Reveal from "../components/effects/Reveal.jsx";
+import SectionHeader from "../components/SectionHeader.jsx";
 
 const DEBOUNCE_DELAY = 3000;
 
@@ -86,19 +87,20 @@ export default function Contact() {
     <div className="w-full bg-secondary pt-12 pb-24">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <Reveal>
-          <div className="mb-20 text-center">
-            <p className="tracking-widest uppercase text-xs text-primary/50 mb-6 font-semibold">
-              Inquiries
-            </p>
-            <h1 className="text-4xl md:text-6xl font-serif text-primary font-light mb-8">
-              Connect With <span className="italic text-primary/80">Us</span>
-            </h1>
-            <p className="text-primary/70 font-light max-w-xl mx-auto">
-              Share the details of your vision, and our curation team will
+            <SectionHeader
+              subtitle="Inquiries"
+              title={
+                <>
+                  Connect With{" "}
+                  <span className="italic text-primary/80">Us</span>
+                </>
+              }
+              description="Share the details of your vision, and our curation team will
               respond promptly with availability, pricing, and next steps for
-              your exclusive event.
-            </p>
-          </div>
+              your exclusive event."
+              className="mb-10"
+              centered = "true"
+            />
         </Reveal>
 
         <Reveal delay={150}>

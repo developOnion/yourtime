@@ -1,4 +1,4 @@
-import LazyImage from "./LazyImage";
+import LazyImage from "./effects/LazyImage.jsx";
 
 export default function PageHero({
   imageSrc,

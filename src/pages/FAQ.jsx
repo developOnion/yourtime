@@ -3,7 +3,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import { faqs } from "../data/faqs";
 import PageHero from "../components/PageHero";
-import Reveal from "../components/Reveal";
+import Reveal from "../components/effects/Reveal";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);

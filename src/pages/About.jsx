@@ -1,6 +1,6 @@
-import LazyImage from "../components/LazyImage";
+import LazyImage from "../components/effects/LazyImage.jsx";
 import PageHero from "../components/PageHero";
-import Reveal from "../components/Reveal";
+import Reveal from "../components/effects/Reveal.jsx";
 import { pastConceptionImages } from "../data/pastConceptionImages";
 
 export default function About() {

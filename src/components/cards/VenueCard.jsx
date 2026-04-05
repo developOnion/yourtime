@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import LazyImage from "../LazyImage.jsx";
-import Reveal from "../Reveal.jsx";
+import LazyImage from "../effects/LazyImage.jsx";
+import Reveal from "../effects/Reveal.jsx";
 
 export default function VenueCard({
   venue,
