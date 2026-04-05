@@ -86,9 +86,8 @@ export default function Contact() {
   return (
     <div className="w-full bg-secondary pt-12 pb-24">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <Reveal>
-            <SectionHeader
-              subtitle="Inquiries"
+        <Reveal direction="none">
+          <SectionHeader              subtitle="Inquiries"
               title={
                 <>
                   Connect With{" "}

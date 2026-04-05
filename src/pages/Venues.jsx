@@ -8,7 +8,7 @@ export default function Venues() {
     <div className="w-full bg-secondary pt-12 pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <Reveal>
+        <Reveal direction="none">
           <SectionHeader
             subtitle="Our Venues"
             title={

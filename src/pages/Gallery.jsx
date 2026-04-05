@@ -26,7 +26,7 @@ export default function Gallery() {
   return (
     <div className="pt-12 pb-24 min-h-screen bg-secondary">
       {/* Header */}
-      <Reveal>
+      <Reveal direction="none">
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <SectionHeader
