@@ -1,3 +1,4 @@
+import { clsx } from "clsx";
 import LazyImage from "./effects/LazyImage.jsx";
 
 export default function PageHero({
@@ -8,7 +9,7 @@ export default function PageHero({
   children,
 }) {
   return (
-    <section className={`relative ${heightClass} w-full -mt-24`}>
+    <section className={clsx("relative w-full -mt-24", heightClass)}>
       <LazyImage
         src={imageSrc}
         alt={imageAlt}
@@ -16,7 +17,7 @@ export default function PageHero({
         wrapperClassName="!h-full !aspect-auto"
         aspectRatio="!h-full"
       />
-      <div className={`absolute inset-0 ${overlayClass}`}></div>
+      <div className={clsx("absolute inset-0", overlayClass)}></div>
       {children}
     </section>
   );

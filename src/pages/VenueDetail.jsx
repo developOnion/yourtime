@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { clsx } from "clsx";
 import { venues } from "../data/venues";
 import { ArrowLeft } from "lucide-react";
 import LazyImage from "../components/effects/LazyImage.jsx";
@@ -74,7 +75,12 @@ export default function VenueDetail() {
                     src={imgUrl}
                     alt={`${venue.name} detail ${idx + 1}`}
                     className="w-full h-full"
-                    wrapperClassName={`bg-gray-100 ${idx === 0 ? "md:col-span-2 !aspect-[16/9]" : "!aspect-[4/3]"}`}
+                    wrapperClassName={clsx(
+                      "bg-gray-100",
+                      idx === 0
+                        ? "md:col-span-2 !aspect-[16/9]"
+                        : "!aspect-[4/3]",
+                    )}
                     aspectRatio={idx === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}
                   />
                 </Reveal>

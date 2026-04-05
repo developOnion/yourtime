@@ -1,3 +1,4 @@
+import { clsx } from "clsx";
 import LazyImage from "../components/effects/LazyImage";
 import Reveal from "../components/effects/Reveal";
 import SectionHeader from "../components/SectionHeader";
@@ -29,7 +30,10 @@ export default function Services() {
           {services.map((service, index) => (
             <Reveal key={index} delay={index * 100}>
               <div
-                className={`flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-12 lg:gap-24`}
+                className={clsx(
+                  "flex flex-col items-center gap-12 lg:gap-24",
+                  index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row",
+                )}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { clsx } from "clsx";
 import { pastEvents } from "../data/pastEvents";
 import { Search, X, Calendar, MapPin, Tag } from "lucide-react";
 import LazyImage from "../components/effects/LazyImage";
@@ -45,12 +46,12 @@ export default function Gallery() {
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300
-                    ${
-                      filter === cat
-                        ? "bg-primary text-secondary border-primary"
-                        : "border-primary/10 text-primary hover:border-accent hover:text-accent"
-                    }`}
+                  className={clsx(
+                    "cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300",
+                    filter === cat
+                      ? "bg-primary text-secondary border-primary"
+                      : "border-primary/10 text-primary hover:border-accent hover:text-accent",
+                  )}
                 >
                   {cat}
                 </button>

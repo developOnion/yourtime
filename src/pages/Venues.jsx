@@ -1,4 +1,5 @@
 import { venues } from "../data/venues";
+import { clsx } from "clsx";
 import VenueCard from "../components/cards/VenueCard.jsx";
 import Reveal from "../components/effects/Reveal.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
@@ -29,7 +30,7 @@ export default function Venues() {
               venue={venue}
               variant="detailed"
               index={index}
-              className={index % 2 !== 0 ? "lg:mt-24" : ""}
+              className={clsx(index % 2 !== 0 && "lg:mt-24")}
             />
           ))}
         </div>

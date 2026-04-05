@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { venues } from "../data/venues";
 import { ArrowRight } from "lucide-react";
+import ActionLink from "../components/ui/ActionLink";
 import VenueCard from "../components/cards/VenueCard.jsx";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/effects/Reveal.jsx";
@@ -24,12 +24,9 @@ export default function Home() {
           <p className="text-secondary text-sm md:text-base tracking-widest uppercase max-w-xl font-normal mb-10">
             Curating exclusive venues for unforgettable narrative moments
           </p>
-          <Link
-            to="/venues"
-            className="bg-secondary text-primary px-10 py-4 tracking-widest uppercase text-xs font-semibold hover:bg-accent hover:text-white transition-all duration-500 shadow-xl"
-          >
+          <ActionLink variant="secondary" to="/venues" className="shadow-xl">
             Explore Venues
-          </Link>
+          </ActionLink>
         </div>
       </PageHero>
 
@@ -58,12 +55,9 @@ export default function Home() {
                   Featured Venues
                 </h3>
               </div>
-              <Link
-                to="/venues"
-                className="hidden md:flex items-center text-sm uppercase tracking-widest border-b border-primary/20 pb-1 hover:border-accent transition-colors duration-300"
-              >
+              <ActionLink variant="text" to="/venues" className="hidden md:flex">
                 View All <ArrowRight size={16} className="ml-2" />
-              </Link>
+              </ActionLink>
             </div>
           </Reveal>
 
@@ -79,12 +73,9 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center md:hidden">
-            <Link
-              to="/venues"
-              className="inline-flex items-center text-xs uppercase tracking-widest border border-primary px-8 py-4 hover:bg-primary hover:text-secondary transition-colors duration-300"
-            >
+            <ActionLink variant="outline" to="/venues">
               View All Venues
-            </Link>
+            </ActionLink>
           </div>
         </div>
       </section>

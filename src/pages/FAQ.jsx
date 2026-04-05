@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { clsx } from "clsx";
 import { faqs } from "../data/faqs";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/effects/Reveal";
@@ -52,9 +53,10 @@ export default function FAQ() {
                 </button>
 
                 <div
-                  className={`transition-all duration-500 ease-in-out ${
-                    openIndex === index ? "max-h-96 pb-8" : "max-h-0"
-                  }`}
+                  className={clsx("transition-all duration-500 ease-in-out", {
+                    "max-h-96 pb-8": openIndex === index,
+                    "max-h-0": openIndex !== index,
+                  })}
                 >
                   <p className="text-primary/70 leading-relaxed font-light">
                     {faq.answer}

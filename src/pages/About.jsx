@@ -1,3 +1,4 @@
+import { clsx } from "clsx";
 import LazyImage from "../components/effects/LazyImage.jsx";
 import PageHero from "../components/PageHero";
 import Reveal from "../components/effects/Reveal.jsx";
@@ -65,7 +66,10 @@ export default function About() {
             {pastConceptionImages.map((item, index) => (
               <Reveal key={index} delay={item.delay}>
                 <div
-                  className={`aspect-square bg-gray-200 overflow-hidden group ${index % 2 !== 0 ? "md:mt-12" : ""}`}
+                  className={clsx(
+                    "aspect-square bg-gray-200 overflow-hidden group",
+                    index % 2 !== 0 && "md:mt-12",
+                  )}
                 >
                   <LazyImage
                     src={item.src}

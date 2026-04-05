@@ -5,6 +5,7 @@ import { venues } from "../data/venues";
 import { Check, X } from "lucide-react";
 import Reveal from "../components/effects/Reveal.jsx";
 import SectionHeader from "../components/SectionHeader.jsx";
+import Button from "../components/ui/Button";
 
 const DEBOUNCE_DELAY = 3000;
 
@@ -279,13 +280,9 @@ export default function Contact() {
               </div>
 
               <div className="pt-8 flex justify-end">
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="cursor-pointer px-12 py-4 bg-primary text-secondary text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-300 disabled:opacity-70 disabled:hover:bg-primary"
-                >
+                <Button variant="primary" type="submit" disabled={submitting}>
                   {submitting ? "Submitting..." : "Submit Inquiry"}
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -315,12 +312,9 @@ export default function Contact() {
               Thank you for entrusting Your Time. A curation specialist will
               review your request and contact you within 24 hours.
             </p>
-            <button
-              onClick={handleGoHome}
-              className="cursor-pointer px-12 py-4 bg-primary text-secondary text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-300"
-            >
+            <Button variant="primary" onClick={handleGoHome}>
               Back to Home
-            </button>
+            </Button>
           </div>
         </div>
       )}

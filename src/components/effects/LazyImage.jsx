@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { clsx } from "clsx";
 
 export default function LazyImage({
   src,
@@ -44,13 +45,14 @@ export default function LazyImage({
   return (
     <div
       ref={imgRef}
-      className={`relative overflow-hidden ${aspectRatio} ${wrapperClassName}`}
+      className={clsx("relative overflow-hidden", aspectRatio, wrapperClassName)}
     >
       {/* Shimmer placeholder */}
       <div
-        className={`absolute inset-0 bg-linear-to-r from-primary/5 via-primary/10 to-primary/5 bg-size-[200%_100%] ${
-          isLoaded ? "opacity-0" : "opacity-100"
-        } transition-opacity duration-500 animate-shimmer`}
+        className={clsx(
+          "absolute inset-0 bg-linear-to-r from-primary/5 via-primary/10 to-primary/5 bg-size-[200%_100%] transition-opacity duration-500 animate-shimmer",
+          isLoaded ? "opacity-0" : "opacity-100",
+        )}
       />
 
       {/* Blur up image */}
@@ -61,11 +63,14 @@ export default function LazyImage({
           loading="lazy"
           onLoad={handleLoad}
           onError={handleError}
-          className={`absolute inset-0 w-full h-full ${objectFit} ${className} ${
+          className={clsx(
+            "absolute inset-0 w-full h-full transition-all duration-700 ease-out",
+            objectFit,
+            className,
             isLoaded
               ? "opacity-100 scale-100 blur-0"
-              : "opacity-0 scale-105 blur-xl"
-          } transition-all duration-700 ease-out`}
+              : "opacity-0 scale-105 blur-xl",
+          )}
         />
       )}
 
