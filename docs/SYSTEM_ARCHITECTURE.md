@@ -29,6 +29,7 @@ graph TD
         P_Detail[VenueDetail.jsx]
         P_Gallery[Gallery.jsx]
         P_FAQ[FAQ.jsx]
+        P_404[NotFound.jsx]
     end
 
     %% UI Component Layer
@@ -58,6 +59,7 @@ graph TD
     P_Home ==>|Props: venue| C_Card
     P_Venues ==>|Props: venue| C_Card
     P_Detail ==>|Props: venue| C_Sidebar
+    P_404 ==>|Props: to/label| C_Action
     Pages ==>|Props: config| C_Hero
     Pages ==>|Children| C_Reveal
     C_Card ==>|Props: to/label| C_Action
@@ -68,7 +70,7 @@ graph TD
     classDef ui fill:#dfd,stroke:#333,stroke-width:1px;
     
     class D_Venues,D_Events,D_FAQ,D_Services data;
-    class P_Home,P_Venues,P_Detail,P_Gallery,P_FAQ page;
+    class P_Home,P_Venues,P_Detail,P_Gallery,P_FAQ,P_404 page;
     class C_Hero,C_Card,C_Sidebar,C_Reveal,C_Action ui;
 ```
 
