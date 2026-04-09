@@ -1,27 +1,25 @@
 import { venues } from "../data/venues";
-import VenueCard from "../components/VenueCard";
-import Reveal from "../components/Reveal";
+import { clsx } from "clsx";
+import VenueCard from "../components/cards/VenueCard.jsx";
+import Reveal from "../components/effects/Reveal.jsx";
+import SectionHeader from "../components/SectionHeader.jsx";
 
 export default function Venues() {
   return (
     <div className="w-full bg-secondary pt-12 pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <Reveal>
-          <div className="mb-20">
-            <p className="tracking-widest uppercase text-xs text-primary/50 mb-4 font-semibold">
-              Our Venues
-            </p>
-            <h1 className="text-5xl md:text-6xl font-serif text-primary font-light">
-              Exclusive{" "}
-              <span className="italic text-primary/80">Properties</span>
-            </h1>
-            <p className="mt-6 text-primary/70 max-w-2xl font-light">
-              Each venue in our collection has been intentionally curated for
-              its architectural integrity, spatial flow, and capacity to elevate
-              extraordinary events.
-            </p>
-          </div>
+        <Reveal direction="none">
+          <SectionHeader
+            subtitle="Our Venues"
+            title={
+              <>
+                Exclusive <span className="italic text-primary/80">Properties</span>
+              </>
+            }
+            description="Each venue in our collection has been intentionally curated for its architectural integrity, spatial flow, and capacity to elevate extraordinary events."
+            className="mb-20"
+          />
         </Reveal>
 
         {/* Venue Grid */}
@@ -32,7 +30,7 @@ export default function Venues() {
               venue={venue}
               variant="detailed"
               index={index}
-              className={index % 2 !== 0 ? "lg:mt-24" : ""}
+              className={clsx(index % 2 !== 0 && "lg:mt-24")}
             />
           ))}
         </div>

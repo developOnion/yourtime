@@ -1,5 +1,7 @@
-import LazyImage from "../components/LazyImage";
-import Reveal from "../components/Reveal";
+import { clsx } from "clsx";
+import LazyImage from "../components/effects/LazyImage";
+import Reveal from "../components/effects/Reveal";
+import SectionHeader from "../components/SectionHeader";
 import { services } from "../data/servies";
 
 export default function Services() {
@@ -7,18 +9,20 @@ export default function Services() {
     <div className="w-full bg-secondary pt-12 pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
-        <Reveal>
-          <div className="mb-24 text-center">
-            <p className="tracking-widest uppercase text-xs text-primary/50 mb-6 font-semibold">
-              Our Offerings
-            </p>
-            <h1 className="text-4xl md:text-6xl font-serif text-primary font-light mb-8 max-w-3xl mx-auto leading-tight">
-              Crafting the{" "}
-              <span className="italic text-primary/80">Complete</span>{" "}
-              Experience
-            </h1>
-            <div className="w-16 h-px bg-primary/20 mx-auto"></div>
-          </div>
+        <Reveal direction="none">
+          <SectionHeader
+            subtitle="Our Offerings"
+            title={
+              <>
+                Crafting the{" "}
+                <span className="italic text-primary/80">Complete</span>{" "}
+                Experience
+              </>
+            }
+            centered={true}
+            showDivider={true}
+            className="mb-24"
+          />
         </Reveal>
 
         {/* Services List */}
@@ -26,7 +30,10 @@ export default function Services() {
           {services.map((service, index) => (
             <Reveal key={index} delay={index * 100}>
               <div
-                className={`flex flex-col ${index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-12 lg:gap-24`}
+                className={clsx(
+                  "flex flex-col items-center gap-12 lg:gap-24",
+                  index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row",
+                )}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2">

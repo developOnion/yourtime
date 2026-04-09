@@ -3,7 +3,9 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import { useSubmit } from "@formspree/react";
 import { venues } from "../data/venues";
 import { Check, X } from "lucide-react";
-import Reveal from "../components/Reveal";
+import Reveal from "../components/effects/Reveal.jsx";
+import SectionHeader from "../components/SectionHeader.jsx";
+import Button from "../components/ui/Button";
 
 const DEBOUNCE_DELAY = 3000;
 
@@ -85,20 +87,20 @@ export default function Contact() {
   return (
     <div className="w-full bg-secondary pt-12 pb-24">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <Reveal>
-          <div className="mb-20 text-center">
-            <p className="tracking-widest uppercase text-xs text-primary/50 mb-6 font-semibold">
-              Inquiries
-            </p>
-            <h1 className="text-4xl md:text-6xl font-serif text-primary font-light mb-8">
-              Connect With <span className="italic text-primary/80">Us</span>
-            </h1>
-            <p className="text-primary/70 font-light max-w-xl mx-auto">
-              Share the details of your vision, and our curation team will
+        <Reveal direction="none">
+          <SectionHeader              subtitle="Inquiries"
+              title={
+                <>
+                  Connect With{" "}
+                  <span className="italic text-primary/80">Us</span>
+                </>
+              }
+              description="Share the details of your vision, and our curation team will
               respond promptly with availability, pricing, and next steps for
-              your exclusive event.
-            </p>
-          </div>
+              your exclusive event."
+              className="mb-10"
+              centered = "true"
+            />
         </Reveal>
 
         <Reveal delay={150}>
@@ -278,13 +280,9 @@ export default function Contact() {
               </div>
 
               <div className="pt-8 flex justify-end">
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="cursor-pointer px-12 py-4 bg-primary text-secondary text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-300 disabled:opacity-70 disabled:hover:bg-primary"
-                >
+                <Button variant="primary" type="submit" disabled={submitting}>
                   {submitting ? "Submitting..." : "Submit Inquiry"}
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -314,12 +312,9 @@ export default function Contact() {
               Thank you for entrusting Your Time. A curation specialist will
               review your request and contact you within 24 hours.
             </p>
-            <button
-              onClick={handleGoHome}
-              className="cursor-pointer px-12 py-4 bg-primary text-secondary text-sm tracking-widest uppercase hover:bg-accent hover:text-white transition-all duration-300"
-            >
+            <Button variant="primary" onClick={handleGoHome}>
               Back to Home
-            </button>
+            </Button>
           </div>
         </div>
       )}

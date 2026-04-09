@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Users, DollarSign, CalendarHeart } from "lucide-react";
-import Reveal from "./Reveal";
+import Reveal from "./effects/Reveal.jsx";
 
 export default function VenueSpecsSidebar({ venue }) {
   return (

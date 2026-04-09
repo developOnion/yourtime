@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { clsx } from "clsx";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +37,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm tracking-widest uppercase transition-colors duration-300 hover:text-accent
-                ${isActive(link.path) ? "text-accent font-medium" : "text-primary"}`}
+                className={clsx(
+                  "text-sm tracking-widest uppercase transition-colors duration-300 hover:text-accent",
+                  isActive(link.path) ? "text-accent font-medium" : "text-primary",
+                )}
               >
                 {link.name}
               </Link>
@@ -67,7 +70,10 @@ export default function Navbar() {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`md:hidden absolute top-24 left-0 w-full bg-secondary border-b border-primary/5 transition-all duration-300 ease-in-out origin-top ${isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"}`}
+        className={clsx(
+          "md:hidden absolute top-24 left-0 w-full bg-secondary border-b border-primary/5 transition-all duration-300 ease-in-out origin-top",
+          isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0",
+        )}
       >
         <div className="flex flex-col items-center py-8 space-y-6">
           {links.map((link) => (
@@ -75,8 +81,10 @@ export default function Navbar() {
               key={link.name}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className={`text-lg tracking-widest uppercase hover:text-accent transition-colors
-                ${isActive(link.path) ? "text-accent font-medium" : "text-primary"}`}
+              className={clsx(
+                "text-lg tracking-widest uppercase hover:text-accent transition-colors",
+                isActive(link.path) ? "text-accent font-medium" : "text-primary",
+              )}
             >
               {link.name}
             </Link>

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { clsx } from "clsx";
 
 export default function Reveal({
   children,
@@ -41,11 +42,13 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
+      className={clsx(
+        "transition-all duration-1000 ease-out",
         isVisible
           ? "opacity-100 translate-y-0 translate-x-0"
-          : `opacity-0 ${directionClasses[direction]}`
-      } ${className}`}
+          : ["opacity-0", directionClasses[direction]],
+        className,
+      )}
     >
       {children}
     </div>

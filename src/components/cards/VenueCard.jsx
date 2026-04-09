@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import LazyImage from "../LazyImage.jsx";
-import Reveal from "../Reveal.jsx";
+import { clsx } from "clsx";
+import LazyImage from "../effects/LazyImage.jsx";
+import Reveal from "../effects/Reveal.jsx";
 
 export default function VenueCard({
   venue,
@@ -18,12 +19,13 @@ export default function VenueCard({
         <LazyImage
           src={venue.coverImage}
           alt={venue.name}
-          className={`w-full h-full transition-transform ease-out ${
-            isCompact ? "duration-1000" : "duration-[1.5s]"
-          } group-hover:scale-105`}
-          wrapperClassName={`mb-6 md:mb-8 border border-primary/5 ${
-            isCompact ? "" : "bg-gray-100"
-          }`}
+          className={clsx(
+            "w-full h-full transition-transform ease-out group-hover:scale-105",
+            isCompact ? "duration-1000" : "duration-[1.5s]",
+          )}
+          wrapperClassName={clsx("mb-6 md:mb-8 border border-primary/5", {
+            "bg-gray-100": !isCompact,
+          })}
           aspectRatio={
             isCompact ? "aspect-[4/5]" : "aspect-[4/3] md:aspect-[3/4]"
           }
@@ -33,9 +35,10 @@ export default function VenueCard({
         <div className="flex flex-col">
           <div className="flex justify-between items-baseline mb-2 md:mb-3">
             <h2
-              className={`${
-                isCompact ? "text-2xl" : "text-3xl"
-              } font-serif text-primary mb-1`}
+              className={clsx("font-serif text-primary mb-1", {
+                "text-2xl": isCompact,
+                "text-3xl": !isCompact,
+              })}
             >
               {venue.name}
             </h2>

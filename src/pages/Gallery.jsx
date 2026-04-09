@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { clsx } from "clsx";
 import { pastEvents } from "../data/pastEvents";
 import { Search, X, Calendar, MapPin, Tag } from "lucide-react";
-import LazyImage from "../components/LazyImage";
-import Reveal from "../components/Reveal";
+import LazyImage from "../components/effects/LazyImage";
+import Reveal from "../components/effects/Reveal";
+import SectionHeader from "../components/SectionHeader.jsx";
 
 export default function Gallery() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -22,25 +24,21 @@ export default function Gallery() {
     }
   }, [selectedEvent]);
 
-  // cursor-pointer absolute top-6 right-6 z-10 p-2 bg-secondary/50 backdrop-blur-md text-primary hover:text-accent transition-colors rounded-full
-
   return (
     <div className="pt-12 pb-24 min-h-screen bg-secondary">
       {/* Header */}
-      <Reveal>
+      <Reveal direction="none">
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="max-w-2xl">
-              <h1 className="font-serif text-5xl md:text-6xl text-primary mb-6 leading-tight">
-                Past{" "}
-                <span className="text-accent italic font-light">Events</span>
-              </h1>
-              <p className="text-primary/70 text-lg leading-relaxed font-light">
-                Explore a curated selection of moments we have helped bring to
-                life. Each event is a testament to our commitment to romantic
-                minimalism and intentionality.
-              </p>
-            </div>
+            <SectionHeader
+              title={
+                <>
+                  Past <span className="text-accent italic font-light">Events</span>
+                </>
+              }
+              description="Explore a curated selection of moments we have helped bring to life. Each event is a testament to our commitment to romantic minimalism and intentionality."
+              className="max-w-2xl"
+            />
 
             {/* Filters */}
             <div className="flex flex-wrap gap-4">
@@ -48,12 +46,12 @@ export default function Gallery() {
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300
-                    ${
-                      filter === cat
-                        ? "bg-primary text-secondary border-primary"
-                        : "border-primary/10 text-primary hover:border-accent hover:text-accent"
-                    }`}
+                  className={clsx(
+                    "cursor-pointer px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300",
+                    filter === cat
+                      ? "bg-primary text-secondary border-primary"
+                      : "border-primary/10 text-primary hover:border-accent hover:text-accent",
+                  )}
                 >
                   {cat}
                 </button>
